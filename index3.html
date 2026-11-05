@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NARASA – Majalah Kelas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--biru:#0B3C5D;--teal:#1FB5BF;--krem:#F3FAFB;--teks:#1D2F3A;--abu:#5B7380}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:'Poppins',sans-serif;color:var(--teks);background:#EAF4F7 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cellipse cx='30' cy='30' rx='14' ry='28' fill='none' stroke='%231FB5BF' stroke-opacity='.14'/%3E%3Cellipse cx='30' cy='30' rx='28' ry='14' fill='none' stroke='%231FB5BF' stroke-opacity='.14'/%3E%3C/svg%3E")}
+header{position:sticky;top:0;z-index:5;background:rgba(234,244,247,.92);backdrop-filter:blur(8px)}
+.bar{max-width:1100px;margin:0 auto;padding:16px 24px;display:flex;align-items:center;gap:20px}
+.logo{font-family:'Playfair Display',serif;font-weight:900;font-size:1.4rem;color:var(--biru);text-decoration:none;margin-right:auto}
+nav a{margin-left:20px;color:var(--abu);text-decoration:none;font-size:.88rem}
+nav a:hover{color:var(--biru)}
+.btn{display:inline-block;padding:11px 24px;border-radius:999px;background:var(--biru);color:#fff;text-decoration:none;font-weight:500;font-size:.9rem}
+.btn:hover{background:var(--teal)}
+.btn.o{background:none;color:var(--biru);padding:11px 8px}
+.pita{height:8px;background:repeating-linear-gradient(90deg,var(--biru) 0 14px,var(--teal) 14px 22px,#fff 22px 26px)}
+.hero{max-width:900px;margin:0 auto;padding:90px 24px 70px;text-align:center}
+.mini{font-size:.72rem;font-weight:600;letter-spacing:.2em;color:var(--teal);text-transform:uppercase}
+h1{font-family:'Playfair Display',serif;font-weight:900;color:var(--biru);font-size:clamp(3rem,10vw,6rem);line-height:1;margin:16px 0}
+.hero p{color:var(--abu);line-height:1.7;max-width:48ch;margin:0 auto 28px}
+section{max-width:1100px;margin:0 auto 72px;padding:0 24px}
+h2{font-family:'Playfair Display',serif;color:var(--biru);font-size:2rem;margin-bottom:8px}
+.sub{color:var(--abu);margin-bottom:24px;font-size:.92rem}
+.tentang{background:var(--krem);border-top:5px solid var(--teal);border-radius:20px;padding:44px;display:grid;grid-template-columns:240px 1fr;gap:48px;align-items:center}
+.sampul{aspect-ratio:3/4;background:var(--biru);color:#fff;padding:22px;display:flex;flex-direction:column;justify-content:space-between;border-top:14px solid var(--teal);box-shadow:12px 12px 0 var(--teal)}
+.sampul small{font-size:.68rem;font-weight:600;letter-spacing:.08em}
+.sampul b{font-family:'Playfair Display',serif;font-size:1.9rem;line-height:1.1}
+.tentang h3{font-family:'Playfair Display',serif;color:var(--biru);font-size:2.2rem;margin:8px 0 12px}
+.tentang p{color:var(--abu);line-height:1.7}
+.tgl{margin-top:16px;font-weight:600;color:var(--teal)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px}
+.org{display:flex;align-items:center;gap:10px;padding:10px 14px;background:var(--krem);border:1px solid #d5e7ec;border-radius:12px;cursor:pointer;font:inherit;font-size:.84rem;text-align:left;color:var(--teks)}
+.org:hover,.org:focus-visible{border-color:var(--teal);outline:none}
+.ava{flex:none;width:32px;height:32px;border-radius:50%;background:var(--biru);color:#fff;display:grid;place-items:center;font-size:.7rem;font-weight:600}
+.mk{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.kartu{background:var(--krem);padding:20px;border-top:3px solid var(--teal);border-radius:10px}
+.kartu small{color:var(--abu);font-size:.72rem}
+.kartu h3{font-family:'Playfair Display',serif;color:var(--biru);margin:4px 0 6px}
+.kartu p{color:var(--abu);font-size:.85rem}
+dialog{border:0;border-radius:18px;padding:28px;width:min(360px,92vw);margin:auto;background:var(--krem);text-align:center}
+dialog::backdrop{background:rgba(11,60,93,.45)}
+.foto{width:110px;height:140px;margin:0 auto 14px;border-radius:8px;background:var(--biru);color:#fff;display:grid;place-items:center;font-size:2rem;font-family:'Playfair Display',serif}
+dialog h3{font-family:'Playfair Display',serif;color:var(--biru)}
+dialog dl{text-align:left;margin:14px 0;font-size:.85rem;display:grid;grid-template-columns:auto 1fr;gap:6px 14px}
+dialog dt{color:var(--abu)}
+dialog em{color:var(--abu);font-size:.85rem}
+.x{position:absolute;top:10px;right:14px;border:0;background:none;font-size:1.3rem;cursor:pointer;color:var(--abu)}
+footer{text-align:center;padding:32px;color:var(--abu);font-size:.85rem}
+@media(max-width:760px){.tentang{grid-template-columns:1fr;padding:26px}.sampul{max-width:220px}nav{display:none}}
+</style>
+</head>
+<body>
+<header><div class="bar">
+  <a class="logo" href="#">NARASA.</a>
+  <nav><a href="#tentang">Tentang</a><a href="#anggota">Kurator</a><a href="#matkul">Mata Kuliah</a></nav>
+  <a class="btn" href="#tentang">Suara NARASA</a>
+</div></header>
+
+<main>
+  <div class="hero">
+    <span class="mini">Pendidikan bersuara dan tertuai melintasi</span>
+    <h1>NARASA.</h1>
+    <p>Kelas yang menulis, bercerita, dan menyuarakan harapan dari ruang kelas hingga ke seluruh negeri.</p>
+    <a class="btn" href="#tentang">Baca Suara Terbaru</a>
+    <a class="btn o" href="#anggota">Jelajahi Kurator →</a>
+  </div>
+  <div class="pita"></div>
+
+  <section id="tentang" style="margin-top:72px">
+    <div class="tentang">
+      <div class="sampul"><small>VOL. 1 · EDISI 1</small><b>Suara<br>NARASA.</b></div>
+      <div>
+        <span class="mini">Majalah Kelas</span>
+        <h3>Suara NARASA</h3>
+        <p>Majalah bertema pendidikan yang memuat tulisan mahasiswa, guru, dan dosen. Edisi pertama ini lahir dari tangan para kurator kelas. (Ganti teks ini dengan deskripsi majalahmu.)</p>
+        <p class="tgl">15 Nov 2026 · Edisi Perdana</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="anggota">
+    <h2>Kurator NARASA</h2>
+    <p class="sub">Klik nama untuk melihat profilnya.</p>
+    <div class="grid" id="daftar"></div>
+  </section>
+
+  <section id="matkul">
+    <h2>Mata Kuliah</h2>
+    <p class="sub">Semester 3 · Kelas 2A</p>
+    <div class="mk">
+      <article class="kartu"><small>Dosen Pengampu</small><h3>Nama Mata Kuliah 1</h3><p>Nama Dosen, M.Pd.</p></article>
+      <article class="kartu"><small>Dosen Pengampu</small><h3>Nama Mata Kuliah 2</h3><p>Nama Dosen, M.Pd.</p></article>
+      <article class="kartu"><small>Dosen Pengampu</small><h3>Nama Mata Kuliah 3</h3><p>Nama Dosen, M.Pd.</p></article>
+    </div>
+  </section>
+</main>
+
+<dialog id="profil">
+  <button class="x" aria-label="Tutup" onclick="profil.close()">×</button>
+  <div class="foto" id="pf"></div>
+  <small class="mini">Kurator NARASA</small>
+  <h3 id="pn"></h3>
+  <dl><dt>Tanggal lahir</dt><dd id="pt"></dd><dt>Asal</dt><dd id="pa"></dd><dt>Hobi</dt><dd id="ph"></dd></dl>
+  <em id="pm"></em>
+</dialog>
+
+<footer>© 2026 NARASA · Majalah Kelas</footer>
+
+<script>
+// EDIT DI SINI: tambah/ubah anggota. Format: [nama, tanggal lahir, asal, hobi, motto]
+const anggota=[
+ ["Nama Anggota 1","01 Jan 2006","Kota A","Membaca","Motto anggota 1"],
+ ["Nama Anggota 2","02 Feb 2006","Kota B","Menulis","Motto anggota 2"],
+ ["Nama Anggota 3","03 Mar 2006","Kota C","Menggambar","Motto anggota 3"]
+];
+const ini=n=>n.split(' ').slice(0,2).map(s=>s[0]).join('').toUpperCase();
+const d=document.getElementById('daftar');
+anggota.forEach(a=>{
+  const b=document.createElement('button');b.className='org';
+  b.innerHTML='<span class="ava">'+ini(a[0])+'</span>'+a[0];
+  b.onclick=()=>{pf.textContent=ini(a[0]);pn.textContent=a[0];pt.textContent=a[1];pa.textContent=a[2];ph.textContent=a[3];pm.textContent='“'+a[4]+'”';profil.showModal()};
+  d.appendChild(b);
+});
+</script>
+</body>
+</html>
