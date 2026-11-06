@@ -107,7 +107,7 @@ footer{text-align:center;padding:32px;color:var(--abu);font-size:.85rem}
   <div class="foto" id="pf"></div>
   <small class="mini">Kurator NARASA</small>
   <h3 id="pn"></h3>
-  <dl><dt>Tanggal lahir</dt><dd id="pt"></dd><dt>Asal</dt><dd id="pa"></dd><dt>Hobi</dt><dd id="ph"></dd></dl>
+  <dl><dt>Nim</dt><dd id="pt"></dd><dt>Asal</dt><dd id="pa"></dd><dt>Hobi</dt><dd id="ph"></dd></dl>
   <em id="pm"></em>
 </dialog>
 
@@ -115,10 +115,43 @@ footer{text-align:center;padding:32px;color:var(--abu);font-size:.85rem}
 
 <script>
 // EDIT DI SINI: tambah/ubah anggota. Format: [nama, nim, asal, hobi, motto]
-const anggota=[34
- ["Achmad Ajmal Ramadhan 1","25110002","Tambakrejo","Membaca","Motto anggota 1"],
- [" 2","02 Feb 2006","Kota B","Menulis","Motto anggota 2"],
- ["Nama Anggota 3","03 Mar 2006","Kota C","Menggambar","Motto anggota 3"]
+const anggota=[
+ ["ACHMAD AJMAL RAMADHAN","25110002","Tambakrejo","Membaca","Motto anggota 1"],
+ ["EKA ELVIANA","25110004","Kota B","Menulis","Motto anggota 2"],
+ ["ADINDA SEPTI ROMADHONI","26110008","Kota C","Menggambar","Motto anggota 3"],
+ ["ELFA NURUN NABHAN","25110010","Kota B","Menulis","Motto anggota 2"],
+ ["FARIDA AGUSTINA","25110011","Kota B","Menulis","Motto anggota 2"], 
+ ["AKYU NINATUS SOFIA","25110012","Kota B","Menulis","Motto anggota 2"],
+ ["ICHA HALIMATUS SA'DIYAH","25110013","Kota B","Menulis","Motto anggota 2"],
+ ["RACHMAD ALI ZAINURI","25110014","Kota B","Menulis","Motto anggota 2"],
+ [" MEVI PUTRI AYU DIANTI","25110016","Kota B","Menulis","Motto anggota 2"],
+ ["IKHWAN NURIZALDI","25110017","Kota B","Menulis","Motto anggota 2"],
+ ["AURA DAMAR LINI","25110019","Kota B","Menulis","Motto anggota 2"],
+ ["FEBY RIA PRIHATINI","25110023","Kota B","Menulis","Motto anggota 2"],
+ ["NIA ALIYATUS SHOFIYA","25110024","Kota B","Menulis","Motto anggota 2"],
+ ["HENDRAWAN KURNIA YULIANTO","25110027","Kota B","Menulis","Motto anggota 2"],
+ ["ANANDHA RIVANO ERICH SETYA FIRMANSYAH","25110029","Kota B","Menulis","Motto anggota 2"],
+ ["NAJWA ERA FAZIRA","25110035","Kota B","Menulis","Motto anggota 2"],
+ ["DYAH SITI LESTARI","25110037","Kota B","Menulis","Motto anggota 2"],
+ ["FATMA NUR ALFI SA'ADAH","25110041","Kota B","Menulis","Motto anggota 2"],
+ ["SITI NUR WAHYUNI","25110043","Kota B","Menulis","Motto anggota 2"],
+ ["INTAN WIDYASTUTIK","25110044","Kota B","Menulis","Motto anggota 2"],
+ ["SINDY OCTAVIA","25110046","Kota B","Menulis","Motto anggota 2"],
+ ["NUR LAILA NIHAYATI","25110048","Kota B","Menulis","Motto anggota 2"],
+ ["NOVITA ANGGRAENI","25110050","Kota B","Menulis","Motto anggota 2"],
+ ["DEWI ZELIKA PUTRI","25110053","Kota B","Menulis","Motto anggota 2"],
+ ["PANDYA MEZZALUNA","25110055","Kota B","Menulis","Motto anggota 2"], 
+ ["LINDI CHISTYA MAULIDA SAPUTRI","25110057","Kota B","Menulis","Motto anggota 2"],
+ ["AMELIA PERTIWI","25110059","Kota B","Menulis","Motto anggota 2"], 
+ ["SUSI WIDYAWATI","25110061","Kota B","Menulis","Motto anggota 2"],
+ ["DIAN TRI LESTARI","25110063","Kota B","Menulis","Motto anggota 2"],
+ ["MIFTAKHUL AZIZAH","25110068","Kota B","Menulis","Motto anggota 2"],  
+ ["DEVY CANTIKA PUSPITASARI","25110070","Kota B","Menulis","Motto anggota 2"],
+ ["EVA AYU RAHMAWATI","25110072","Kota B","Menulis","Motto anggota 2"],
+ ["RISKA JULIA NOVITASARI","25110074","Kota B","Menulis","Motto anggota 2"],
+ ["SABILA AZ-ZAHRA","25110076","Kota B","Menulis","Motto anggota 2"],
+ ["AZZAHRA FITRI YANANDA","25110079","Kota B","Menulis","Motto anggota 2"],
+ ["FANY AMELIA KURNIATUS SHOLEHAH","25110081","Kota B","Menulis","Motto anggota 2"]  
 ];
 const ini=n=>n.split(' ').slice(0,2).map(s=>s[0]).join('').toUpperCase();
 const d=document.getElementById('daftar');
