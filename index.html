@@ -111,7 +111,7 @@ footer{text-align:center;padding:32px;color:var(--abu);font-size:.85rem}
   <section id="tentang" style="margin-top:72px">
     <div class="tabs" role="tablist">
       <button role="tab" data-tab="edisi" class="on">Semua Edisi</button>
-      <button role="tab" data-tab="tulisan">Tulisan Kulawarga</button>
+      <button role="tab" data-tab="tulisan">Feature</button>
       <button role="tab" data-tab="redaksi">Struktur Redaksi</button>
     </div>
     <div class="panel" id="p-edisi">
@@ -141,8 +141,8 @@ footer{text-align:center;padding:32px;color:var(--abu);font-size:.85rem}
     </div>
 
     <div class="panel" id="p-tulisan" hidden>
-      <h2>Tulisan Kulawarga</h2>
-      <p class="sub">Feature karya kulawarga NARASA. Klik kartu untuk membaca. <a href="#tentang" data-tab="edisi" class="lnk">Kirim tulisanmu →</a></p>
+      <h2>Feature</h2>
+      <p class="sub">Feature karya NARASA. Klik kartu untuk membaca. <a href="#tentang" data-tab="edisi" class="lnk">Kirim tulisanmu →</a></p>
       <div class="chips" id="chips"></div>
       <div class="ft" id="ftdaftar"></div>
     </div>
@@ -208,9 +208,9 @@ const redaksi=[
  {tim:"Visual & Dokumentasi",desc:"Foto lapangan & ilustrasi",orang:[["Fotografer","Nama, Nama"],["Ilustrator","Nama, Nama"]]},
  {tim:"Layout & Produksi",desc:"Desain, review, publikasi",orang:[["Art Director","Nama anggota"],["Desainer Layout","Nama, Nama"],["Final Review & Publisher","Nama, Nama"]]}
 ];
-// ===== EDIT DI SINI: tulisan kulawarga (feature). Format: {judul, penulis, rubrik, ringkas, isi}. Pisahkan paragraf dengan baris kosong (\n\n) =====
+// ===== EDIT DI SINI:(feature). Format: {judul, penulis, rubrik, ringkas, isi}. Pisahkan paragraf dengan baris kosong (\n\n) =====
 const tulisan=[
- {judul:"Judul Feature Pertama",penulis:"Nama Penulis",rubrik:"Feature Pendidikan",ringkas:"Ringkasan singkat dua kalimat tentang isi tulisan ini.",isi:"Paragraf pertama tulisan.\n\nParagraf kedua tulisan."},
+ {judul:"Judul Feature Pertama",penulis:"Riska Julia N",rubrik:"Feature Pendidikan",Link:"Paragraf pertama tulisan.\n\nParagraf kedua tulisan."},
  {judul:"Judul Opini Kelas",penulis:"Nama Penulis",rubrik:"Opini & Esai",ringkas:"Ringkasan singkat dua kalimat tentang isi tulisan ini.",isi:"Paragraf pertama tulisan.\n\nParagraf kedua tulisan."},
  {judul:"Profil Seorang Tokoh",penulis:"Nama Penulis",rubrik:"Profil Tokoh",ringkas:"Ringkasan singkat dua kalimat tentang isi tulisan ini.",isi:"Paragraf pertama tulisan.\n\nParagraf kedua tulisan."}
 ];
