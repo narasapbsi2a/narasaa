@@ -221,7 +221,7 @@ const tulisan=[
   {judul:"Waduk Sonorejo, Senja yang Menghidupi Desa",penulis:"Susi Widyawati",rubrik:"Feature",Link:"https://narasapbsi2a.github.io/narasaa/Susi Widyawati.pdf"},
   {judul:"Menjaga Denyut Nadi Agraris",penulis:"akyu ninatus sofia",rubrik:"Feature",Link:"https://narasapbsi2a.github.io/narasaa/akyu ninatus sofia.pdf"},
   {judul:"Gunung Pandan: Di Balik Mitos, Tersimpan Jejak Peradapan Masa Lalu",penulis:"elfa nurun nabhan",rubrik:"Feature",Link:"https://narasapbsi2a.github.io/narasaa/elfa nurun nabhan.pdf"},
-  {judul:"Judul Feature Pertama",penulis:"Siti Anis Wijayanti",rubrik:"Feature",Link:"https://narasapbsi2a.github.io/narasaa/Siti Anis Wijayanti.pdf"},
+  {judul:"Menyapa Sang Merlion : Ikon Classic yang Tak Pernah Gagal Memikat Wisatawan",penulis:"Siti Anis Wijayanti",rubrik:"Feature",Link:"https://narasapbsi2a.github.io/narasaa/Siti Anis Wijayanti.pdf"},
   {judul:"Judul Feature Pertama",penulis:"Riska Julia N",rubrik:"Feature",Link:"https://narasapbsi2a.github.io/narasaa/Riska Julia n .pdf"},
   
  
@@ -267,8 +267,8 @@ const anggota=[
  ["RISKA JULIA NOVITASARI","25110074","Kota B","Menulis","Motto anggota 2"],
  ["SABILA AZ-ZAHRA","25110076","Kota B","Menulis","Motto anggota 2"],
  ["AZZAHRA FITRI YANANDA","25110079","Kota B","Menulis","Motto anggota 2"],
- ["FANY AMELIA KURNIATUS SHOLEHAH","25110081","Kota B","Menulis","Motto anggota 2"]
- ["SITI ANIS WIJAYANTI","26119002","Kota B","Menulis","Motto anggota 2"],
+ ["FANY AMELIA KURNIATUS SHOLEHAH","25110081","Kota B","Menulis","Motto anggota 2"],
+ ["SITI ANIS WIJAYANTI","26119002","Kota B","Menulis","Motto anggota 2"]
 ];
 const E=t=>String(t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 document.getElementById('rdaftar').innerHTML=redaksi.map(g=>'<article class="rg"><h3>'+E(g.tim)+'</h3><small>'+E(g.desc)+'</small><ul>'+g.orang.map(o=>'<li><span>'+E(o[0])+'</span>'+E(o[1])+'</li>').join('')+'</ul></article>').join('');
