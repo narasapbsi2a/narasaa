@@ -226,14 +226,15 @@ const tulisan=[
   
  
   
- {judul:"Judul Opini Kelas",penulis:"Nama Penulis",rubrik:"Opini & Esai",ringkas:"Ringkasan singkat dua kalimat tentang isi tulisan ini.",isi:"Paragraf pertama tulisan.\n\nParagraf kedua tulisan."},
- {judul:"Profil Seorang Tokoh",penulis:"Nama Penulis",rubrik:"Profil Tokoh",ringkas:"Ringkasan singkat dua kalimat tentang isi tulisan ini.",isi:"Paragraf pertama tulisan.\n\nParagraf kedua tulisan."}
+ {judul:"KOLOM",penulis:"Nama Penulis",rubrik:"Kolom",ringkas:"Ringkasan singkat dua kalimat tentang isi tulisan ini.",isi:"Paragraf pertama tulisan.\n\nParagraf kedua tulisan."},
+ {judul:"ESAI",penulis:"Nama Penulis",rubrik:"Esai",ringkas:"Ringkasan singkat dua kalimat tentang isi tulisan ini.",isi:"Paragraf pertama tulisan.\n\nParagraf kedua tulisan."},
+ {judul:"ARTIKEL",penulis:"Nama Penulis",rubrik:"Artikel",ringkas:"Ringkasan singkat dua kalimat tentang isi tulisan ini.",isi:"Paragraf pertama tulisan.\n\nParagraf kedua tulisan."}
 ];
-// EDIT DI SINI: tambah/ubah anggota. Format: [nama, nim, asal, hobi, motto]
+// EDIT DI SINI: tambah/ubah anggota. Format: [nama, NIM ]
 const anggota=[
  ["ACHMAD AJMAL RAMADHAN","25110002","Tambakrejo","Membaca","Motto anggota 1"],
  ["EKA ELVIANA","25110004","Kota B","Menulis","Motto anggota 2"],
- ["ADINDA SEPTI ROMADHONI","26110008","Kota C","Menggambar","Motto anggota 3"],
+ ["ADINDA SEPTI ROMADHONI","25110008","Kota C","Menggambar","Motto anggota 3"],
  ["ELFA NURUN NABHAN","25110010","Kota B","Menulis","Motto anggota 2"],
  ["FARIDA AGUSTINA","25110011","Kota B","Menulis","Motto anggota 2"], 
  ["AKYU NINATUS SOFIA","25110012","Kota B","Menulis","Motto anggota 2"],
@@ -260,13 +261,14 @@ const anggota=[
  ["AMELIA PERTIWI","25110059","Kota B","Menulis","Motto anggota 2"], 
  ["SUSI WIDYAWATI","25110061","Kota B","Menulis","Motto anggota 2"],
  ["DIAN TRI LESTARI","25110063","Kota B","Menulis","Motto anggota 2"],
- ["MIFTAKHUL AZIZAH","25110068","Kota B","Menulis","Motto anggota 2"],  
+ ["MIFTAKHATUL AZIZAH","25110068","Kota B","Menulis","Motto anggota 2"],  
  ["DEVY CANTIKA PUSPITASARI","25110070","Kota B","Menulis","Motto anggota 2"],
  ["EVA AYU RAHMAWATI","25110072","Kota B","Menulis","Motto anggota 2"],
  ["RISKA JULIA NOVITASARI","25110074","Kota B","Menulis","Motto anggota 2"],
  ["SABILA AZ-ZAHRA","25110076","Kota B","Menulis","Motto anggota 2"],
  ["AZZAHRA FITRI YANANDA","25110079","Kota B","Menulis","Motto anggota 2"],
- ["FANY AMELIA KURNIATUS SHOLEHAH","25110081","Kota B","Menulis","Motto anggota 2"]  
+ ["FANY AMELIA KURNIATUS SHOLEHAH","25110081","Kota B","Menulis","Motto anggota 2"]
+ ["SITI ANIS WIJAYANTI","26119002","Kota B","Menulis","Motto anggota 2"],
 ];
 const E=t=>String(t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 document.getElementById('rdaftar').innerHTML=redaksi.map(g=>'<article class="rg"><h3>'+E(g.tim)+'</h3><small>'+E(g.desc)+'</small><ul>'+g.orang.map(o=>'<li><span>'+E(o[0])+'</span>'+E(o[1])+'</li>').join('')+'</ul></article>').join('');
