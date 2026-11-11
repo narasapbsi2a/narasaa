@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NARASA – Majalah Kelas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--biru:#0B3C5D;--teal:#1FB5BF;--krem:#F3FAFB;--teks:#1D2F3A;--abu:#5B7380}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:'Poppins',sans-serif;color:var(--teks);background:#EAF4F7 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cellipse cx='30' cy='30' rx='14' ry='28' fill='none' stroke='%231FB5BF' stroke-opacity='.14'/%3E%3Cellipse cx='30' cy='30' rx='28' ry='14' fill='none' stroke='%231FB5BF' stroke-opacity='.14'/%3E%3C/svg%3E")}
+header{position:sticky;top:0;z-index:5;background:rgba(234,244,247,.92);backdrop-filter:blur(8px)}
+.bar{max-width:1100px;margin:0 auto;padding:16px 24px;display:flex;align-items:center;gap:20px}
+.logo{font-family:'Playfair Display',serif;font-weight:900;font-size:1.4rem;color:var(--biru);text-decoration:none;margin-right:auto}
+nav a{margin-left:20px;color:var(--abu);text-decoration:none;font-size:.88rem}
+nav a:hover{color:var(--biru)}
+.btn{display:inline-block;padding:11px 24px;border-radius:999px;background:var(--biru);color:#fff;text-decoration:none;font-weight:500;font-size:.9rem}
+.btn:hover{background:var(--teal)}
+.btn.o{background:none;color:var(--biru);padding:11px 8px}
+.pita{height:8px;background:repeating-linear-gradient(90deg,var(--biru) 0 14px,var(--teal) 14px 22px,#fff 22px 26px)}
+.hero{max-width:900px;margin:0 auto;padding:90px 24px 70px;text-align:center}
+.mini{font-size:.72rem;font-weight:600;letter-spacing:.2em;color:var(--teal);text-transform:uppercase}
+h1{font-family:'Playfair Display',serif;font-weight:900;color:var(--biru);font-size:clamp(3rem,10vw,6rem);line-height:1;margin:16px 0}
+.hero p{color:var(--abu);line-height:1.7;max-width:48ch;margin:0 auto 28px}
+section{max-width:1100px;margin:0 auto 72px;padding:0 24px}
+h2{font-family:'Playfair Display',serif;color:var(--biru);font-size:2rem;margin-bottom:8px}
+.sub{color:var(--abu);margin-bottom:24px;font-size:.92rem}
+.wrap{display:block}.wrap .tentang{grid-template-columns:200px 1fr;gap:32px;padding:32px}.wrap .tentang h3{font-size:1.8rem}.tentang{background:var(--krem);border-top:5px solid var(--teal);border-radius:20px;padding:44px;display:grid;grid-template-columns:240px 1fr;gap:48px;align-items:center}
+.sampul{aspect-ratio:3/4;background:var(--biru);color:#fff;padding:22px;display:flex;flex-direction:column;justify-content:space-between;border-top:14px solid var(--teal);box-shadow:12px 12px 0 var(--teal)}
+.sampul small{font-size:.68rem;font-weight:600;letter-spacing:.08em}
+.sampul b{font-family:'Playfair Display',serif;font-size:1.9rem;line-height:1.1}
+.tentang h3{font-family:'Playfair Display',serif;color:var(--biru);font-size:2.2rem;margin:8px 0 12px}
+.tentang p{color:var(--abu);line-height:1.7}
+.tgl{margin-top:16px;font-weight:600;color:var(--teal)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px}
+.org{display:flex;align-items:center;gap:10px;padding:10px 14px;background:var(--krem);border:1px solid #d5e7ec;border-radius:12px;cursor:pointer;font:inherit;font-size:.84rem;text-align:left;color:var(--teks)}
+.org:hover,.org:focus-visible{border-color:var(--teal);outline:none}
+.ava{flex:none;width:32px;height:32px;border-radius:50%;background:var(--biru);color:#fff;display:grid;place-items:center;font-size:.7rem;font-weight:600}
+.mk{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.kartu{background:var(--krem);padding:20px;border-top:3px solid var(--teal);border-radius:10px}
+.kartu small{color:var(--abu);font-size:.72rem}
+.kartu h3{font-family:'Playfair Display',serif;color:var(--biru);margin:4px 0 6px}
+.kartu p{color:var(--abu);font-size:.85rem}
+dialog{border:0;border-radius:18px;padding:28px;width:min(360px,92vw);margin:auto;background:var(--krem);text-align:center}
+dialog::backdrop{background:rgba(11,60,93,.45)}
+dialog h3{font-family:'Playfair Display',serif;color:var(--biru)}
+dialog dl{text-align:left;margin:14px 0;font-size:.85rem;display:grid;grid-template-columns:auto 1fr;gap:6px 14px}
+dialog dt{color:var(--abu)}
+dialog em{color:var(--abu);font-size:.85rem}
+.x{position:absolute;top:10px;right:14px;border:0;background:none;font-size:1.3rem;cursor:pointer;color:var(--abu)}
+footer{text-align:center;padding:32px;color:var(--abu);font-size:.85rem}
+.aksi{display:flex;flex-wrap:wrap;gap:8px;align-items:center}.aksi .btn{border:0;cursor:pointer;font-family:inherit}.aksi .btn.o{border:0}
+.info{min-height:1.2em;color:var(--teal)!important;font-weight:500}
+.rd{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
+.rg{background:var(--krem);border-top:3px solid var(--teal);border-radius:10px;padding:20px}
+.rg h3{font-family:'Playfair Display',serif;color:var(--biru)}
+.rg>small{color:var(--abu);font-size:.75rem}
+.rg ul{list-style:none;margin-top:12px;display:grid;gap:10px}
+.rg li{display:flex;flex-direction:column;font-size:.85rem}
+.rg li span{color:var(--abu);font-size:.72rem;letter-spacing:.04em;text-transform:uppercase}
+.tabs{display:flex;gap:8px;overflow-x:auto;margin-bottom:28px;border-bottom:2px solid #d5e7ec}
+.tabs button{flex:none;border:0;background:none;font:inherit;font-size:.9rem;font-weight:500;color:var(--abu);padding:10px 16px;cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-2px}
+.tabs button.on{color:var(--biru);border-color:var(--teal)}
+.panel[hidden]{display:none}
+.lnk{color:var(--teal);font-weight:600;text-decoration:none}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.chips button{border:1px solid #cfe2e8;background:var(--krem);border-radius:999px;padding:6px 14px;font:inherit;font-size:.8rem;color:var(--abu);cursor:pointer}
+.chips button.on{background:var(--biru);color:#fff;border-color:var(--biru)}
+.ft{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px}
+.fk{text-decoration:none;display:flex;flex-direction:column;gap:6px;text-align:left;font:inherit;background:var(--krem);border:0;border-top:3px solid var(--teal);border-radius:10px;padding:20px;cursor:pointer;color:var(--teks)}
+.fk:hover,.fk:focus-visible{box-shadow:0 6px 18px rgba(11,60,93,.12);outline:none}
+.fk .mini{font-size:.65rem}
+.fk h3{font-family:'Playfair Display',serif;color:var(--biru);font-size:1.15rem;line-height:1.3}
+.fk p{color:var(--abu);font-size:.85rem;line-height:1.55}
+.fk .pn{margin-top:auto;padding-top:8px;font-size:.78rem;font-weight:600;color:var(--biru)}
+#baca{width:min(640px,92vw);max-height:86vh;overflow:auto;text-align:left;padding:32px}
+#baca h3{font-size:1.6rem;margin:6px 0}
+#baca .by{color:var(--teal);font-weight:600;font-size:.85rem;margin-bottom:16px}
+#baca .isi p{line-height:1.8;font-size:.92rem;margin-bottom:12px}
+@media(max-width:1000px){.wrap{grid-template-columns:1fr}}
+@media(max-width:760px){.wrap .tentang{grid-template-columns:1fr}.tentang{grid-template-columns:1fr;padding:26px}.sampul{max-width:220px}nav{display:none}}
+</style>
+</head>
+<body>
+<header><div class="bar">
+  <a class="logo" href="#">NARASA.</a>
+  <nav><a href="#tentang">Tentang</a><a href="#tentang" data-tab="tulisan">Tulisan</a><a href="#tentang" data-tab="redaksi">Redaksi</a><a href="#anggota">Kurator</a><a href="#matkul">Mata Kuliah</a></nav>
+  <a class="btn" href="#tentang">Suara NARASA</a>
+</div></header>
+
+<main>
+  <div class="hero">
+    <span class="mini">Pendidikan bersuara dan tertuai melintasi</span>
+    <h1>NARASA.</h1>
+    <p>Kelas yang menulis, bercerita, dan menyuarakan harapan dari ruang kelas hingga ke seluruh negeri.</p>
+    <a class="btn" href="#tentang">Baca Suara Terbaru</a>
+    <a class="btn o" href="#anggota">Jelajahi Kurator →</a>
+  </div>
+  <div class="pita"></div>
+
+  <section id="tentang" style="margin-top:72px">
+    <div class="tabs" role="tablist">
+      <button role="tab" data-tab="edisi" class="on">Semua Edisi</button>
+      <button role="tab" data-tab="tulisan">Feature</button>
+      <button role="tab" data-tab="redaksi">Struktur Redaksi</button>
+    </div>
+    <div class="panel" id="p-edisi">
+    <div class="wrap">
+    <div class="tentang">
+      <div class="sampul"><small>VOL. 1 · EDISI 1</small><b>Cerita<br>NARASA.</b></div>
+      <div>
+        <span class="mini">Majalah Kelas</span>
+        <h3>Cerita NARASA</h3>
+        <p>NARASA merupakan ruang digital mahasiswa Pendidikan Bahasa dan Sastra Indonesia A 2025 yang hadir sebagai wadah kreativitas, literasi, dan publikasi karya. Melalui NARASA, kami berupaya mengabadikan perjalanan, gagasan, serta karya mahasiswa dalam satu ruang yang dapat dinikmati bersama.</p>
+        <p class="tgl">15 Nov 2026 · Edisi Perdana</p>
+      </div>
+    </div>
+    </div>
+    </div>
+
+    <div class="panel" id="p-tulisan" hidden>
+      <h2>Feature</h2>
+      <p class="sub">Feature karya NARASA. Klik kartu untuk membuka tulisannya.</p>
+      <div class="chips" id="chips"></div>
+      <div class="ft" id="ftdaftar"></div>
+    </div>
+
+    <div class="panel" id="p-redaksi" hidden>
+      <h2>Struktur Redaksi</h2>
+      <p class="sub" id="rtotal"></p>
+      <div class="rd" id="rdaftar"></div>
+    </div>
+  </section>
+  
+  <section id="anggota">
+    <h2>Kurator NARASA</h2>
+    <p class="sub">Klik nama untuk melihat profilnya.</p>
+    <div class="grid" id="daftar"></div>
+  </section>
+
+  <section id="matkul">
+    <h2>Mata Kuliah</h2>
+    <p class="sub">Semester 3 · Kelas 2A</p>
+    <div class="mk">
+      <article class="kartu"><small>Dosen Pengampu</small><h3>BIPA</h3><p>Dr. Ima Isnaini TR, M.Pd.</p></article>
+      <article class="kartu"><small>Dosen Pengampu</small><h3>Kajian Konservasi Sastra</h3><p>Muhamad Sholehhudin, S.S., M.Pd.</p></article>
+      <article class="kartu"><small>Dosen Pengampu</small><h3>Apresiasi Prosa Fiksi</h3><p>Abdul Ghoni Asror, M.Pd.</p></article>
+      <article class="kartu"><small>Dosen Pengampu</small><h3>Morfologi</h3><p>Muhamad Sholehhudin, S.S., M.Pd.</p></article>
+      <article class="kartu"><small>Dosen Pengampu</small><h3>Belajar dan Pembelajaran</h3><p>Abdul Ghoni Asror, M.Pd.</p></article>
+      <article class="kartu"><small>Dosen Pengampu</small><h3>Media Pembelajaran</h3><p>Arrori Ashar Hidayad, S.Pd., M.Pd.</p></article>
+      <article class="kartu"><small>Dosen Pengampu</small><h3>Kritik Sastra</h3><p>Sutrimah, M.Pd.</p></article>
+      <article class="kartu"><small>Dosen Pengampu</small><h3>Ke-PGRI-an</h3><p>Sutrimah, M.Pd.</p></article>
+      <article class="kartu"><small>Dosen Pengampu</small><h3>Filsafat Pendidikan</h3><p>Abdul Ghoni Asror, M.Pd.</p></article>
+      <article class="kartu"><small>Dosen Pengampu</small><h3>Jurnalistik dan Majalah Sekolah</h3><p>Joko Setiyono, M.Pd.</p></article>
+    </div>
+  </section>
+</main>
+
+<dialog id="profil">
+  <button class="x" aria-label="Tutup" onclick="profil.close()">×</button>
+  <small class="mini">Kurator NARASA</small>
+  <h3 id="pn"></h3>
+  <dl><dt>Nim</dt><dd id="pt"></dd></dl>
+</dialog>
+
+<dialog id="baca">
+  <button class="x" aria-label="Tutup" onclick="baca.close()">×</button>
+  <small class="mini" id="br"></small>
+  <h3 id="bj"></h3>
+  <p class="by" id="bp"></p>
+  <div class="isi" id="bi"></div>
+</dialog>
+
+<footer>© 2026 NARASA · Majalah Kelas</footer>
+
+<script>
+// ===== EDIT DI SINI: tim redaksi. Format: {tim, desc, orang:[[peran, nama], ...]} =====
+const redaksi=[
+ {tim:"Pimpinan Redaksi",desc:"Mengarahkan isi & jadwal terbit",orang:[["Pemimpin Redaksi","Nia Aliyatus Shofiya"],["Wakil Pemimpin Redaksi","Intan Widyastutik, Devy Cantika Puspitasari"],["Sekretaris","Dian Tri Lestari"]]},
+ {tim:"Penulis / Reporter",desc:"Meriset, mewawancarai, menulis",orang:[["Penulis","Amelia Pertiwi, Dewi Zelika Putri, Dyah Siti Lestari, Fatma Nur Alfi Sa’adah, Feby Ria Prihatini, Eva Ayu Rahmawati, Hendrawan Kurnia Yulianto, Ica Halimatus Sa’diyah, Lindi Chistya M.S., Mevi Putri Ayu Dianti, Miftakhatul Azizah, Najwa Era Fazira, Novita Anggraeni, Rachmad Ali Zainuri, Riska Julia N, Sabila Azzahra, Sindy Octavia, Siti Nur Wahyuni, Elfa Nurun Nabhan, Akyu Ninatus Sofia"],["Reporter","Riska Julia N, Sindy Octavia, Akyu Ninatus Sofia, Siti Anis Wijayanti"]]},
+ {tim:"Editor Bahasa",desc:"Menjaga bahasa & fakta",orang:[["Tim Penyunting","Farida Agustina, Adinda Septi Romadhoni"]]},
+ {tim:"Visual & Dokumentasi",desc:"Foto lapangan & ilustrasi",orang:[["Fotografer","Anandha Rivano Erich Setya Firmansyah, Ikhwan Nurizaldi"]]},
+ {tim:"Layout & Produksi",desc:"Desain, review, publikasi",orang:[["Art Director","Susi Widyawati, Pandya Mezaluna, Eka Elviana, Achmad Ajmal Ramadhan"],["Desainer Layout","Fany Ameilia Kurniatus Sholehah, Farida Agustina, Intan Widyastutik, Nur Laila Nihayati, Anandha Rivano Erich Setya Firmansyah, Novita Anggraeni, Ikhwan Nurizaldi, Devy Cantika Puspitasari"],["Final Review & Publisher","Nia Aliyatus Shofiya, Intan Widyastutik, Devy Cantika Puspitasari"]]}
+];
+// ===== EDIT DI SINI: (feature). Format: {judul, penulis, rubrik, ringkas, isi}. Pisahkan paragraf dengan baris kosong (\n\n) =====
+const tulisan=[
+ {judul:"Sawuran di Gunung Panji",penulis:"Riska Julia N",rubrik:"Feature",Link:"https://narasapbsi2a.github.io/narasaa/Riska Julia n .pdf"},
+  {judul:"Jejak Mbah Gemplo, Penjaga Ingatan dari Sendangrejo",penulis:"Achmad Ajmal Ramadhan",rubrik:"Feature",Link:"https://narasapbsi2a.github.io/narasaa/Achmad Ajmal Ramadhan.pdf"},
+  {judul:"Sejak 1933, Mushola Panggung Ngrandu Masih Memanggil Warga",penulis:"Adinda Septi Romadhoni",rubrik:"Feature",Link:"https://narasapbsi2a.github.io/narasaa/Adinda Septi Romadhoni.pdf"},
+  {judul:"Di Balik Sumur Minyak Kawengan: Perjuangan Pekerja demi Keluarga dan Masa Depan",penulis:"Amelia Pertiwi",rubrik:"Feature",Link:"https://narasapbsi2a.github.io/narasaa/Amelia Pertiwi.pdf"},
+  {judul:"Jejak Dakwah yang Tetap Hidup di Desa Clebung",penulis:"Anandha Rivano Erich Setya Firmansyah",rubrik:"Feature",Link:"https://narasapbsi2a.github.io/narasaa/Anandha Rivano Erich Setya Firmansyah.pdf"},
+  {judul:"Kedung Maor: Alam Indah, Warisan yang Harus Dijaga",penulis:"Devy Cantika Puspitasari",rubrik:"Feature",Link:"https://narasapbsi2a.github.io/narasaa/Devy Cantika Puspitasari.pdf"},
+  {judul:"Sedekah Bumi Desa Nglampin",penulis:"Dewi Zelika Putri",rubrik:"Feature",Link:"https://narasapbsi2a.github.io/narasaa/Dewi Zelika Putri.pdf"},
+  {judul:"Di Balik Manisnya Belimbing Ngringinrejo",penulis:"Dian Tri Lestari",rubrik:"Feature",Link:"https://narasapbsi2a.github.io/narasaa/Dian Tri Lestari.pdf"},
+  {judul:"Tirta Warna Dander, Ruang Sejuk untuk Menepi dari Riuh Kota",penulis:"Dyah Siti Lestari",rubrik:"Feature",Link:"https://narasapbsi2a.github.io/narasaa/Dyah siti lestari .pdf"},
+  {judul:"Kedung Lantung: Dari Rembesan Minyak Bumi Menjadi Harapan Ekonomi Keluarga",penulis:"Eka Elviana",rubrik:"Feature",Link:"https://narasapbsi2a.github.io/narasaa/Eka Elviana.pdf"},
+  {judul:"Watu Gandul: Jejak Batu, Kisah yang Dijaga",penulis:"Eva Ayu Rahmawati",rubrik:"Feature",Link:"https://narasapbsi2a.github.io/narasaa/Eva Ayu Rahmawati.pdf"},
+  {judul:"Dari Sudut Kampung, Merawat Andhap Asor pada Atap Doro Kepek",penulis:"Fany Ameilia Kurniatus Sholehah",rubrik:"Feature",Link:"https://narasapbsi2a.github.io/narasaa/Fany Ameilia Kurniatus Sholehah.pdf"},
+  {judul:"Menggantungkan Hidup pada Jernihnya Sendang Growgoland",penulis:"Farida Agustina",rubrik:"Feature",Link:"https://narasapbsi2a.github.io/narasaa/Farida Agustina.pdf"},
+  {judul:"Jauh dari Rumah, Padat Jadwal:",penulis:"Fatma Nur Alfi Sa’adah",rubrik:"Feature",Link:"https://narasapbsi2a.github.io/narasaa/Fatma nur alfi sa’adah.pdf"},
+  {judul:"Jejak Segar dari Tuban: Antara Pesona Alam dan Legenda Sang Putri",penulis:"Feby Ria Prihatini",rubrik:"Feature",Link:"https://narasapbsi2a.github.io/narasaa/Feby Ria Prihatini.pdf"},
+  {judul:"Sumbertlaseh",penulis:"Hendrawan Kurnia Yulianto",rubrik:"Feature",Link:"https://narasapbsi2a.github.io/narasaa/Hendrawan Kurnia Yulianto.pdf"},
+  {judul:"Dari Sawah ke Panggung, Jejak Budaya Sandur Bojonegoro",penulis:"Ica Halimatus Sa’diyah",rubrik:"Feature",Link:"https://narasapbsi2a.github.io/narasaa/Ica Halimatus Sa'diyah.pdf"},
+  {judul:"Dari Riak Lorong Pasar, Tumbuh Denyut Kehidupan di Jantung Kedungadem",penulis:"Ikhwan Nurizaldi",rubrik:"Feature",Link:"https://narasapbsi2a.github.io/narasaa/Ikhwan Nurizaldi .pdf"},
+  {judul:"Dari Sawah yang Subur, Lahir Ikrar Menjaga Bumi",penulis:"Intan Widyastutik",rubrik:"Feature",Link:"https://narasapbsi2a.github.io/narasaa/Intan Widyastutik.pdf"},
+  {judul:"Kayangan Api: Nyala Abadi di Balik Hutan Jati Bojonegoro",penulis:"Lindi Chistya M.S.",rubrik:"Feature",Link:"https://narasapbsi2a.github.io/narasaa/Lindi Chistya M.S.pdf"},
+  {judul:"Museum Rajekwesi: Menyusuri Jejak Sejarah Bojonegoro",penulis:"Mevi Putri Ayu Dianti",rubrik:"Feature",Link:"https://narasapbsi2a.github.io/narasaa/Mevi Putri Ayu Dianti.pdf"},
+  {judul:"Batik Seto Bojonegoro",penulis:"Miftakhatul Azizah",rubrik:"Feature",Link:"https://narasapbsi2a.github.io/narasaa/Miftakhatul Azizah .pdf"},
+  {judul:"Dua Dunia dalam Satu Perjalanan, Kuliah dan Organisasi",penulis:"Najwa Era Fazira",rubrik:"Feature",Link:"https://narasapbsi2a.github.io/narasaa/Najwa Era Fazira.pdf"},
+  {judul:"Cara Purwoasri Berterima Kasih pada Bumi",penulis:"Nia Aliyatus Shofiya",rubrik:"Feature",Link:"https://narasapbsi2a.github.io/narasaa/Nia Aliyatus Shofiya.pdf"},
+  {judul:"Menelusuri Jejak Prabu Angkling Dharma: Legenda yang Tetap Hidup di Tanah Bojonegoro",penulis:"Novita Anggraeni",rubrik:"Feature",Link:"https://narasapbsi2a.github.io/narasaa/Novita anggraeni .pdf"},
+  {judul:"Belajar di Balik Pesantren: Menyeimbangkan Pendidikan Formal dan Agama",penulis:"Nur Laila Nihayati",rubrik:"Feature",Link:"https://narasapbsi2a.github.io/narasaa/Nur Laila Nihayati.pdf"},
+  {judul:"Merawat Warisan Leluhur: Tradisi Sedekah Bumi di Desa Sendangrejo",penulis:"Pandya Mezaluna",rubrik:"Feature",Link:"https://narasapbsi2a.github.io/narasaa/Pandya Mezaluna.pdf"},
+  {judul:"Dari Cikal Bakal Desa, Tumbuh Akar Sejarah dan Tradisi Ngulanan",penulis:"Rachmad Ali Zainuri",rubrik:"Feature",Link:"https://narasapbsi2a.github.io/narasaa/Rachmad Ali zainuri .pdf"},
+  {judul:"Sendang Beron: Mata Air Kehidupan Warga Punggulrejo",penulis:"Sabila Azzahra",rubrik:"Feature",Link:"https://narasapbsi2a.github.io/narasaa/Sabila Azzahra.pdf"},
+  {judul:"Berendam di Singgahan, Cara Hangat Melepas Pegal",penulis:"Sindy Octavia",rubrik:"Feature",Link:"https://narasapbsi2a.github.io/narasaa/Sindy Octavia.pdf"},
+  {judul:"Sendang Sampang: Pesona Mata Air yang Perlahan Terlupakan",penulis:"Siti Nur Wahyuni",rubrik:"Feature",Link:"https://narasapbsi2a.github.io/narasaa/Siti Nur Wahyuni.pdf"},
+  {judul:"Waduk Sonorejo, Senja yang Menghidupi Desa",penulis:"Susi Widyawati",rubrik:"Feature",Link:"https://narasapbsi2a.github.io/narasaa/Susi Widyawati.pdf"},
+  {judul:"Menjaga Denyut Nadi Agraris",penulis:"Akyu Ninatus Sofia",rubrik:"Feature",Link:"https://narasapbsi2a.github.io/narasaa/akyu ninatus sofia.pdf"},
+  {judul:"Gunung Pandan: Di Balik Mitos, Tersimpan Jejak Peradaban Masa Lalu",penulis:"Elfa Nurun Nabhan",rubrik:"Feature",Link:"https://narasapbsi2a.github.io/narasaa/elfa nurun nabhan.pdf"},
+  {judul:"Menyapa Sang Merlion: Ikon Klasik yang Tak Pernah Gagal Memikat Wisatawan",penulis:"Siti Anis Wijayanti",rubrik:"Feature",Link:"https://narasapbsi2a.github.io/narasaa/Siti Anis Wijayanti.pdf"},
+  {judul:"Judul Feature Pertama",penulis:"Riska Julia N",rubrik:"Feature",Link:"https://narasapbsi2a.github.io/narasaa/Riska Julia n .pdf"},
+ {judul:"KOLOM",penulis:"Nama Penulis",rubrik:"Kolom",ringkas:"Ringkasan singkat dua kalimat tentang isi tulisan ini.",isi:"Paragraf pertama tulisan.\n\nParagraf kedua tulisan."},
+ {judul:"ESAI",penulis:"Nama Penulis",rubrik:"Esai",ringkas:"Ringkasan singkat dua kalimat tentang isi tulisan ini.",isi:"Paragraf pertama tulisan.\n\nParagraf kedua tulisan."},
+ {judul:"ARTIKEL",penulis:"Nama Penulis",rubrik:"Artikel",ringkas:"Ringkasan singkat dua kalimat tentang isi tulisan ini.",isi:"Paragraf pertama tulisan.\n\nParagraf kedua tulisan."}
+];
+// EDIT DI SINI: tambah/ubah anggota. Format: [nama, NIM ]
+const anggota=[
+ ["ACHMAD AJMAL RAMADHAN","25110002","Tambakrejo","Membaca","Motto anggota 1"],
+ ["EKA ELVIANA","25110004","Kota B","Menulis","Motto anggota 2"],
+ ["ADINDA SEPTI ROMADHONI","25110008","Kota C","Menggambar","Motto anggota 3"],
+ ["ELFA NURUN NABHAN","25110010","Kota B","Menulis","Motto anggota 2"],
+ ["FARIDA AGUSTINA","25110011","Kota B","Menulis","Motto anggota 2"], 
+ ["AKYU NINATUS SOFIA","25110012","Kota B","Menulis","Motto anggota 2"],
+ ["ICHA HALIMATUS SA’DIYAH","25110013","Kota B","Menulis","Motto anggota 2"],
+ ["RACHMAD ALI ZAINURI","25110014","Kota B","Menulis","Motto anggota 2"],
+ ["MEVI PUTRI AYU DIANTI","25110016","Kota B","Menulis","Motto anggota 2"],
+ ["IKHWAN NURIZALDI","25110017","Kota B","Menulis","Motto anggota 2"],
+ ["AURA DAMAR LINI","25110019","Kota B","Menulis","Motto anggota 2"],
+ ["FEBY RIA PRIHATINI","25110023","Kota B","Menulis","Motto anggota 2"],
+ ["NIA ALIYATUS SHOFIYA","25110024","Kota B","Menulis","Motto anggota 2"],
+ ["HENDRAWAN KURNIA YULIANTO","25110027","Kota B","Menulis","Motto anggota 2"],
+ ["ANANDHA RIVANO ERICH SETYA FIRMANSYAH","25110029","Kota B","Menulis","Motto anggota 2"],
+ ["NAJWA ERA FAZIRA","25110035","Kota B","Menulis","Motto anggota 2"],
+ ["DYAH SITI LESTARI","25110037","Kota B","Menulis","Motto anggota 2"],
+ ["FATMA NUR ALFI SA’ADAH","25110041","Kota B","Menulis","Motto anggota 2"],
+ ["SITI NUR WAHYUNI","25110043","Kota B","Menulis","Motto anggota 2"],
+ ["INTAN WIDYASTUTIK","25110044","Kota B","Menulis","Motto anggota 2"],
+ ["SINDY OCTAVIA","25110046","Kota B","Menulis","Motto anggota 2"],
+ ["NUR LAILA NIHAYATI","25110048","Kota B","Menulis","Motto anggota 2"],
+ ["NOVITA ANGGRAENI","25110050","Kota B","Menulis","Motto anggota 2"],
+ ["DEWI ZELIKA PUTRI","25110053","Kota B","Menulis","Motto anggota 2"],
+ ["PANDYA MEZZALUNA","25110055","Kota B","Menulis","Motto anggota 2"], 
+ ["LINDI CHISTYA MAULIDA SAPUTRI","25110057","Kota B","Menulis","Motto anggota 2"],
+ ["AMELIA PERTIWI","25110059","Kota B","Menulis","Motto anggota 2"], 
+ ["SUSI WIDYAWATI","25110061","Kota B","Menulis","Motto anggota 2"],
+ ["DIAN TRI LESTARI","25110063","Kota B","Menulis","Motto anggota 2"],
+ ["MIFTAKHATUL AZIZAH","25110068","Kota B","Menulis","Motto anggota 2"],  
+ ["DEVY CANTIKA PUSPITASARI","25110070","Kota B","Menulis","Motto anggota 2"],
+ ["EVA AYU RAHMAWATI","25110072","Kota B","Menulis","Motto anggota 2"],
+ ["RISKA JULIA NOVITASARI","25110074","Kota B","Menulis","Motto anggota 2"],
+ ["SABILA AZ-ZAHRA","25110076","Kota B","Menulis","Motto anggota 2"],
+ ["AZZAHRA FITRI YANANDA","25110079","Kota B","Menulis","Motto anggota 2"],
+ ["FANY AMELIA KURNIATUS SHOLEHAH","25110081","Kota B","Menulis","Motto anggota 2"],
+ ["SITI ANIS WIJAYANTI","26119002","Kota B","Menulis","Motto anggota 2"]
+];
+const E=t=>String(t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+document.getElementById('rdaftar').innerHTML=redaksi.map(g=>'<article class="rg"><h3>'+E(g.tim)+'</h3><small>'+E(g.desc)+'</small><ul>'+g.orang.map(o=>'<li><span>'+E(o[0])+'</span>'+E(o[1])+'</li>').join('')+'</ul></article>').join('');
+document.getElementById('rtotal').textContent=redaksi.length+' tim kerja';
+let rf='Semua';
+function tampil(){
+ const ru=['Semua',...new Set(tulisan.map(t=>t.rubrik))];
+ document.getElementById('chips').innerHTML=ru.map(x=>'<button'+(x===rf?' class="on"':'')+' data-r="'+E(x)+'">'+E(x)+'</button>').join('');
+ const l=tulisan.map((t,i)=>[t,i]).filter(([t])=>rf==='Semua'||t.rubrik===rf);
+ document.getElementById('ftdaftar').innerHTML=l.length?l.map(([t,i])=>{const h='<span class="mini">'+E(t.rubrik)+'</span><h3>'+E(t.judul)+'</h3>'+(t.ringkas?'<p>'+E(t.ringkas)+'</p>':'')+'<span class="pn">'+E(t.penulis)+(t.Link?' · Buka tulisan ↗':'')+'</span>';return t.Link?'<a class="fk" href="'+E(encodeURI(t.Link))+'" target="_blank" rel="noopener">'+h+'</a>':'<button class="fk" data-i="'+i+'">'+h+'</button>'}).join(''):'<p class="sub">Belum ada tulisan.</p>';
+}
+document.getElementById('chips').onclick=e=>{const b=e.target.closest('button');if(b){rf=b.dataset.r;tampil()}};
+document.getElementById('ftdaftar').onclick=e=>{const b=e.target.closest('button.fk');if(!b)return;const t=tulisan[b.dataset.i];if(!t.isi)return;
+ br.textContent=t.rubrik;bj.textContent=t.judul;bp.textContent='Oleh '+t.penulis;
+ bi.innerHTML=t.isi.split(/\n\n+/).map(p=>'<p>'+E(p)+'</p>').join('');baca.showModal()};
+function bukaTab(n){document.querySelectorAll('.tabs button').forEach(b=>b.classList.toggle('on',b.dataset.tab===n));
+ document.querySelectorAll('.panel').forEach(p=>p.hidden=p.id!=='p-'+n)}
+document.querySelectorAll('[data-tab]').forEach(a=>a.addEventListener('click',()=>bukaTab(a.dataset.tab)));
+tampil();
+const ini=n=>n.trim().split(' ').slice(0,2).map(s=>s[0]).join('').toUpperCase();
+const d=document.getElementById('daftar');
+anggota.forEach(a=>{
+  const b=document.createElement('button');b.className='org';
+  b.innerHTML='<span class="ava">'+ini(a[0])+'</span>'+a[0];
+  b.onclick=()=>{pn.textContent=a[0];pt.textContent=a[1];profil.showModal()};
+  d.appendChild(b);
+});
+</script>
+</body>
+</html>
